@@ -23,7 +23,10 @@ print("serveur demarrer")
 while True:
     socket.listen(5)
     conn, adress=socket.accept() #connexion acceptée
-    print("Client connecte")
+    ip_client=adress[0]
+    port_client=adress[1]
+    aff='client d\'adresse ' + str(ip_client) + ' depuis port ' + str(port_client)
+    print(aff)
 
     data = conn.recv(1024) #réception du msg
     data = data.decode("utf8") #décodage du msg
