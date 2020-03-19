@@ -19,6 +19,14 @@ host, port = (host, port)
 #création du socket
 socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-socket.sendto(msg, (host, port))
+#envoie du message
+data = msg.encode("utf8") #encodage du msg
+socket.sendto(data, (host, port))
+
+data = socket.recv(1024) #reception de la reponse du serveur
+data = data.decode("utf8") #décodage de la réponse
+data = "recu "+data #syntaxe respectée
+print(data)
+
 
 socket.close()

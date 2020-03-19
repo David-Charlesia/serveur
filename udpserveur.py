@@ -22,6 +22,11 @@ print("serveur demarrer")
 
 while True:
     data, addr = socket.recvfrom(1024)
-    print "received message:", data
+
+    data = data.decode("utf8") #décodage du msg
+    data = "ok : " + data #syntaxe respectée
+    print(data)
+
+    data=data.encode("utf8")
 
 socket.close()

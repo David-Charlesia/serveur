@@ -30,7 +30,6 @@ while True:
     data = "ok : " + data #syntaxe respectée
     print(data)
 
-    data_to_send="recu \"" + data + "\""
     data=data.encode("utf8")
     conn.send(data) #envoie de la confirmation serveur au Client
 
