@@ -6,20 +6,16 @@ Created on Tue Mar 17 13:16:29 2020
 @author: david
 """
 import socket
+import sys
 
-host, port = ('',5678)
+#définition des paramètres d'entrées
+host = str(sys.argv[1])
+port = int(sys.argv[2])
 
-socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host, port = (host,port)
+
+#créeation du socket tcp
+socket = socket.socket()
 socket.bind((host,port))
 
-while True:
-    socket.listen()
-    conn, adress=socket.accept()
-    print("Client connecté !")
-
-    data = conn.recv(1024)
-    data = data.decode("utf8")
-    print(data)
-
-conn.close()
-socket.close()
+print("serveur demarrer")

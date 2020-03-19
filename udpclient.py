@@ -7,4 +7,14 @@ Created on Tue Mar 17 12:55:57 2020
 """
 
 import socket
+import sys
 
+#définition des paramètres d'entrées
+host = str(sys.argv[1])
+port = int(sys.argv[2])
+msg = str(sys.argv[3])
+
+host, port = (host, port)
+
+#création du socket
+socket = socket.socket()
