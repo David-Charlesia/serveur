@@ -20,7 +20,6 @@ socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
     socket.connect((host, port)) #connexion au serveur
-    print("Connecte au serveur")
 
     #envoie du message
     data = msg.encode("utf8") #encodage du msg
@@ -28,7 +27,7 @@ try:
 
     data = socket.recv(1024) #reception de la reponse du serveur
     data = data.decode("utf8") #décodage de la réponse
-    data = "recu "+data #syntaxe respectée
+    data = "recu \""+data+"\"" #syntaxe respectée
     print(data)
 
 except Exception as e: #si erreur de connexion ou erreur d'envoie du msg

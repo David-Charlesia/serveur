@@ -9,10 +9,9 @@ import socket
 import sys
 
 #définition des paramètres d'entrées
-host = str(sys.argv[1])
-port = int(sys.argv[2])
+port = int(sys.argv[1])
 
-host, port = (host,port)
+host, port = ("",port)
 
 #créeation du socket tcp
 socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

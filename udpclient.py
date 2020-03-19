@@ -25,7 +25,7 @@ socket.sendto(data, (host, port))
 
 data = socket.recv(1024) #reception de la reponse du serveur
 data = data.decode("utf8") #décodage de la réponse
-data = "recu "+data #syntaxe respectée
+data = "recu \""+data+"\"" #syntaxe respectée
 print(data)
 
 

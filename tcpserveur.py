@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Mar 17 13:16:29 2020
+Created on Tue Mar 17 13:16:50 2020
 
 @author: david
 """
@@ -9,14 +9,15 @@ import socket
 import sys
 
 #définition des paramètres d'entrées
-host = str(sys.argv[1])
-port = int(sys.argv[2])
+port = int(sys.argv[1])
 
-host, port = (host,port)
+host, port = ('',port)
 
 #créeation du socket tcp
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket.bind((host,port))
+#socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) pour le broadcast, ne fonctionne pas
+#socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1) pour le broadcast, ne fonctionne pas
 
 print("serveur demarrer")
 
