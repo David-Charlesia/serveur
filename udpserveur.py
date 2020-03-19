@@ -15,7 +15,7 @@ port = int(sys.argv[2])
 host, port = (host,port)
 
 #créeation du socket tcp
-socket = socket.socket()
+socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 socket.bind((host,port))
 
 print("serveur demarrer")
