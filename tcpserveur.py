@@ -27,7 +27,7 @@ while True:
 
     data = conn.recv(1024) #réception du msg
     data = data.decode("utf8") #décodage du msg
-    data = "ok : " + data #syntaxe demandé
+    data = "ok : " + data #syntaxe respectée
     print(data)
 
     data_to_send="recu \"" + data + "\""
