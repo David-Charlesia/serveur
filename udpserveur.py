@@ -19,3 +19,9 @@ socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 socket.bind((host,port))
 
 print("serveur demarrer")
+
+while True:
+    data, addr = socket.recvfrom(1024)
+    print "received message:", data
+
+socket.close()

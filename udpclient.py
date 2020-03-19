@@ -17,4 +17,8 @@ msg = str(sys.argv[3])
 host, port = (host, port)
 
 #création du socket
-socket = socket.socket()
+socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+socket.sendto(msg, (host, port))
+
+socket.close()
